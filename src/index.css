@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.dark-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #444 #111;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
