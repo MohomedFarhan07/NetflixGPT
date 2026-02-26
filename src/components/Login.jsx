@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Header from "./Header";
 import { checkSignIn, checkSignUp } from "../utils/validation";
 import {
@@ -97,7 +97,7 @@ const Login = () => {
           alt="Background"
           className="w-full h-full object-cover max-sm:h-screen"
           width={1920}
-          height={1080} 
+          height={1080}
         />
       </div>
       <form
@@ -113,6 +113,7 @@ const Login = () => {
             className="p-4 my-4 w-full bg-gray-700/80"
             type="text"
             placeholder="Full Name"
+            tabIndex={1}
           />
         )}
         <input
@@ -120,6 +121,7 @@ const Login = () => {
           className=" p-4 my-4 w-full bg-gray-700/80"
           type="email"
           placeholder="Email Address"
+          tabIndex={2}
         />
         <input
           ref={password}
@@ -137,6 +139,25 @@ const Login = () => {
         <p
           className="py-4 hover:underline cursor-pointer"
           onClick={toggleSignInForm}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            // Triggers action on Enter (13) or Space (32) keys
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault(); // Prevents page scrolling on Space
+              toggleSignInForm();
+            }
+
+            if (e.key === "Tab") {
+              e.preventDefault();
+
+              const firstElement = document.querySelector(`[tabindex="${isSignIn ? 2 : 1}"]`);
+
+              if (firstElement) {
+                firstElement.focus();
+              }
+            }
+          }}
         >
           {!isSignIn
             ? "Already have an account? Sign In now"

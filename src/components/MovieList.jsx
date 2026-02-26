@@ -66,12 +66,33 @@ const MovieList = ({ title, movies }) => {
     else dispatch(addUpcomingMovies(json.results));
   };
 
-  if (!movies) return;
-  
+  if (!movies) return null;
+
   return (
-    <div className="max-sm:mt-0 max-sm:font-bold px-6 mt-5">
+    <div
+      className="max-sm:mt-0 max-sm:font-bold px-6 mt-5"
+      onKeyDown={(e) => {
+
+            if (e.key === "Tab" && title=="Upcoming") {
+              e.preventDefault();
+
+              console.log("print");
+
+              const firstElement = document.querySelector(
+                `[tabindex="1"]`,
+              );
+
+              if (firstElement) {
+                firstElement.focus();
+              }
+            }
+          }}
+    >
       <h1 className="text-lg md:text-3xl py-4 text-white">{title}</h1>
-      <div className="flex overflow-x-auto dark-scrollbar" onScroll={(e) => handleScroll(e)}>
+      <div
+        className="flex overflow-x-auto dark-scrollbar"
+        onScroll={(e) => handleScroll(e)}
+      >
         <div className="flex">
           {movies?.map((movie, i) => (
             <MovieCard

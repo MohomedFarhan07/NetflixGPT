@@ -76,6 +76,7 @@ const Header = () => {
             <select
               className="h-8 px-3 mt-5  text-xs bg-gray-900 text-white border border-gray-700 rounded-md"
               onChange={handleLanguageChange}
+              tabIndex={5}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
                 <option
@@ -91,6 +92,7 @@ const Header = () => {
 
           <button
             onClick={handleGPTSearch}
+            tabIndex={6}
             className="
     flex items-center gap-2
     bg-linear-to-r from-slate-800 to-slate-900
@@ -108,6 +110,7 @@ const Header = () => {
 
 
           <button
+          tabIndex={7}
             className="
     flex items-center gap-2
     bg-gray-900 text-gray-200 font-medium text-sm

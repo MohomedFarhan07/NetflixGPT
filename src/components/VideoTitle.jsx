@@ -10,7 +10,7 @@ const VideoTitle = (props) => {
           className="max-sm:text-xs flex items-center gap-2 bg-white text-black font-semibold px-6 py-2 rounded hover:bg-opacity-80 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer"
           role="button"
           aria-describedby="play"
-          aria-pressed="false"
+          tabIndex={1}
         >
           ▶️ Play
         </button>
@@ -18,7 +18,7 @@ const VideoTitle = (props) => {
           className="max-sm:hidden flex items-center gap-2 bg-gray-700 bg-opacity-70 text-white font-semibold px-6 py-2 rounded hover:bg-opacity-90 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer"
           role="button"
           aria-describedby="more-info"
-          aria-pressed="false"
+          tabIndex={2}
         >
           ℹ️ More Info
         </button>

@@ -96,7 +96,26 @@ const GPTSearchBar = () => {
         <button
           className="max-sm:text-sm py-2 m-4 px-4 bg-red-700 text-white rounded-lg col-span-3"
           onClick={handleGPTSearch}
-           role="button" aria-describedby="submit" aria-pressed="true"
+          role="button"
+          aria-describedby="submit"
+          aria-pressed="true"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+            }
+
+            if (e.key === "Tab") {
+              e.preventDefault();
+
+              const firstElement = document.querySelector(
+                `[tabindex="5"]`,
+              );
+
+              if (firstElement) {
+                firstElement.focus();
+              }
+            }
+          }}
         >
           {lang[language].search}
         </button>
