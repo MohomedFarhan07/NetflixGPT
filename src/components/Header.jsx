@@ -106,6 +106,7 @@ const Header = () => {
             {showGPTSearch ? "🏠 Homepage" : "🔍 GPT Search"}
           </button>
 
+
           <button
             className="
     flex items-center gap-2
