@@ -1,9 +1,5 @@
 const VideoTitle = (props) => {
-  //const { overview, title } = props;
-
-  const title = "Elemental";
-  const overview =
-    "In a city host to a variety of elements, a hot-tempered, fiery Ember meets the emotional, heart-on-his-sleeve Wade. As they navigate precarious situations, their stark differences bring them closer.";
+  const { overview, title } = props;
 
   return (
     <div className="max-sm:px-6 w-full aspect-video absolute text-white pt-[20%] px-24 bg-linear-to-r from-black">

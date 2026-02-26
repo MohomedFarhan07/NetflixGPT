@@ -61,7 +61,15 @@ const Header = () => {
 
   return (
     <header className="absolute px-8 py-2 bg-linear-to-b from-black/60 to-transparent w-full z-10 flex justify-between flex-col md:flex-row ">
-      <img className="w-44 mx-auto md:mx-0" src={LOGO_URL} alt="" />
+      <div className="w-44 mx-auto md:mx-0 aspect-4/1">
+        <img
+          src={LOGO_URL}
+          alt="Logo"
+          className="w-full h-full object-contain"
+          width={176} 
+          height={44} 
+        />
+      </div>
       {user && (
         <div className="flex justify-around md:p-0.5 ">
           {showGPTSearch && (

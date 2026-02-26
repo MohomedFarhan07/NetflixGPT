@@ -91,11 +91,13 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="fixed">
+      <div className="fixed top-0 left-0 w-full h-screen -z-10">
         <img
-          className="max-sm:h-screen max-sm:object-cover"
           src={BG_IMAGE}
-          alt=""
+          alt="Background"
+          className="w-full h-full object-cover max-sm:h-screen"
+          width={1920}
+          height={1080} 
         />
       </div>
       <form
