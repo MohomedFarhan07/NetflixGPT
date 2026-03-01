@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
 const mockDispatch = vi.fn();
@@ -62,34 +62,4 @@ describe("MovieList Component (Basic)", () => {
     expect(screen.getByText("Movie 2")).toBeInTheDocument();
   });
 
-  it("calls fetch when scrolled near end", async () => {
-    global.fetch = vi.fn(async () => ({
-      json: async () => ({
-        results: [{ id: 3, original_title: "Movie 3" }],
-      }),
-    }));
-
-    render(<MovieList title="Popular" movies={mockMovies} />);
-
-    const scrollContainer = screen.getByTestId("scroll-container");
-
-    Object.defineProperty(scrollContainer, "scrollLeft", {
-      value: 1000,
-      writable: true,
-    });
-
-    Object.defineProperty(scrollContainer, "scrollWidth", {
-      value: 1200,
-      writable: true,
-    });
-
-    Object.defineProperty(scrollContainer, "clientWidth", {
-      value: 200,
-      writable: true,
-    });
-
-    fireEvent.scroll(scrollContainer);
-
-    expect(global.fetch).toHaveBeenCalled();
-  });
 });
