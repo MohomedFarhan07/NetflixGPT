@@ -1,9 +1,9 @@
-const puppeteer = require("puppeteer");
+import puppeteer from "puppeteer";
 
 (async () => {
   const browser = await puppeteer.launch({
     headless: false,
-    slowMo: 150,
+    slowMo: 200,
     args: ["--window-size=1920,1080"],
   });
   const page = await browser.newPage();

@@ -1,8 +1,8 @@
 export const checkSignIn = (email, password) => {
-  // Email validation
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const isEmailValid = emailRegex.test(email);
-  // Password validation regex
+
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   const isPasswordValid = passwordRegex.test(password);
@@ -13,7 +13,7 @@ export const checkSignIn = (email, password) => {
   if (!isPasswordValid) {
     return "Please enter a valid password. ";
   }
-  return null; // No validation errors
+  return null;
 };
 
 

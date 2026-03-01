@@ -7,3 +7,13 @@
 * Built comprehensive testing coverage including Unit & Integration tests with Vitest and End-to-End (E2E) testing using Puppeteer.
 * Improved accessibility by implementing WCAG-compliant ARIA attributes, ensuring inclusive and screen-reader-friendly user interactions.
 * Enabled offline functionality through Progressive Web App (PWA) setup and custom Service Worker caching strategies. 
+
+
+
+
+## Unit and Integration
+
+
+* Header 
+* movieList 
+* useSearchMovieTMDB 

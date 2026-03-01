@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
 import { checkSignIn, checkSignUp } from "../utils/validation";
 import {
@@ -142,9 +142,8 @@ const Login = () => {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
-            // Triggers action on Enter (13) or Space (32) keys
             if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault(); // Prevents page scrolling on Space
+              e.preventDefault(); 
               toggleSignInForm();
             }
 

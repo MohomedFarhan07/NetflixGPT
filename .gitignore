@@ -3,3 +3,7 @@ node_modules
 coverage
 dist
 .firebase
+
+src/__tests__/Header.test.jsx
+src/__tests__/MovieList.test.jsx
+src/__tests__/useSearchMovieTMDB.test.js

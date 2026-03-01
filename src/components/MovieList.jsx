@@ -92,6 +92,7 @@ const MovieList = ({ title, movies }) => {
       <div
         className="flex overflow-x-auto dark-scrollbar"
         onScroll={(e) => handleScroll(e)}
+        data-testid="scroll-container"
       >
         <div className="flex">
           {movies?.map((movie, i) => (

@@ -5,7 +5,7 @@ const APP_SHELL = [
   "/index.html",
 ];
 
-// Install - Precache core files
+
 self.addEventListener("install", (event) => {
   self.skipWaiting();
   event.waitUntil(
@@ -15,7 +15,7 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// Activate - Clean old caches
+
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -31,7 +31,7 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch - Network First Strategy
+
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
