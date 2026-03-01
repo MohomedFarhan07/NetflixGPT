@@ -27,7 +27,7 @@ vi.mock("firebase/auth", () => ({
     callback(null); 
     return vi.fn();
   }),
-  signOut: vi.fn(() => Promise.resolve()),
+  signOut: vi.fn(async () => {}),
 }));
 
 
